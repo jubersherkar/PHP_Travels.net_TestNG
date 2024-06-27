@@ -1,5 +1,0 @@
-com\snd\stepDefinitions\Hooks.class
-com\snd\stepDefinitions\FlightSearchSteps.class
-com\snd\stepDefinitions\HomePageSteps.class
-com\snd\runners\TestRunner.class
-com\snd\stepDefinitions\LoginSteps.class
