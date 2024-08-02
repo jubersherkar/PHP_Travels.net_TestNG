@@ -279,4 +279,5 @@ public class HomePage
 		((WebElement) fWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//strong[contains(text(),'Arabic')]")))).click();
 		((WebElement) fWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//header/div[1]/div[2]/div[2]/ul[1]/li[1]/ul[1]/li[1]/a[1]")))).click();
 	}
+	
 }

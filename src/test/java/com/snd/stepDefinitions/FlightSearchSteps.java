@@ -28,7 +28,10 @@ public class FlightSearchSteps
 	
 	@Given("User clicks on flights tab")
 	public void user_clicks_on_flights_tab() {
-	    homePage.clickOnFlightsTab();
+	    homePage.transaleToEnglish();
+	    log.info("Translated to English");
+		homePage.clickOnFlightsTab();
+	    log.info("Clicked on Flights tab");
 	}
 	@Given("User clicks on One way option")
 	public void user_clicks_on_one_way_option() {

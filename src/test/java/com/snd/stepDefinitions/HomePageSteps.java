@@ -31,6 +31,8 @@ public class HomePageSteps {
 		BaseClass baseClass = testContext.getPageObjectManager().getBaseClass();
 		baseClass.enterBaseUrl();
 		log.info("Entered base URL");
+		homePage.transaleToEnglish();
+		log.info("Translated to English");
 	}
 	@Given("Check for products like Flights,Hotels,Tours,Cars presence")
 	public void check_for_products_like_flights_hotels_tours_cars_presence() {
