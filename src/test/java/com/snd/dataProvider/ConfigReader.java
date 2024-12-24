@@ -93,15 +93,24 @@ public class ConfigReader {
 	}
 
 	public String getBaseUrl() {
-		String baseUrl = prop.getProperty("Base_Url");
-		if (baseUrl != null) {
-			return baseUrl;
-		} else
-			throw new RuntimeException("Base Url not found in the configuration file");
+//		String baseUrl = prop.getProperty("Base_Url");
+		String environment = System.getProperty("env");
+		if (environment != null) {
+			if(environment.equalsIgnoreCase("qa"))
+				return prop.getProperty("Base_Url_QA");
+			else
+				return prop.getProperty("Base_Url_UAT");
+		} 
+		else
+		{
+			return prop.getProperty("Base_Url_QA");
+//			throw new RuntimeException("Base Url not found in the configuration file");
+		}
+		
 	}
 
 	public DriverType getBrowser() {
-		String browserName = prop.getProperty("Browser");
+		String browserName = System.getProperty("browser");
 		if (browserName == null || browserName.equalsIgnoreCase("chrome"))
 			return DriverType.CHROME;
 		else if (browserName.equalsIgnoreCase("firefox"))
