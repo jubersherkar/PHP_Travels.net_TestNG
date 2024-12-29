@@ -37,7 +37,7 @@ public class Hooks {
 
 		if (scenario.isFailed()) {
 			String screenShotName = scenario.getName().replaceAll(" ", "_");
-			byte[] sourcePath = ((TakesScreenshot) testContext.getWebDriverManager().getDriver())
+			final byte[] sourcePath = ((TakesScreenshot) testContext.getWebDriverManager().getDriver())
 					.getScreenshotAs(OutputType.BYTES);
 			
 			scenario.attach(sourcePath, "image/png", screenShotName);
