@@ -15,9 +15,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<cucumber.version>7.14.0</cucumber.version>
-<!--	<junit.version>4.13.1</junit.version> -->
+		<!--	<junit.version>4.13.1</junit.version> -->
 		<maven.compiler.version>3.8.1</maven.compiler.version>
-		<maven.surefire.version>2.22.2</maven.surefire.version>
+		<maven.surefire.version>3.0.0</maven.surefire.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -60,18 +60,21 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
-		 
+
 		<dependency>
-    		<groupId>com.aventstack</groupId>
-    		<artifactId>extentreports</artifactId>
-    		<version>5.0.9</version>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.1</version>
 		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extentreports-cucumber7-adapter</artifactId>
 			<version>1.13.0</version>
 		</dependency>
-		
+
+
 		<!--
 		https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core  -->
 		<dependency>
@@ -86,23 +89,23 @@
 		</dependency>
 		<dependency>
 			<groupId>net.masterthought</groupId>
-		<artifactId>cucumber-reporting</artifactId>
+			<artifactId>cucumber-reporting</artifactId>
 			<version>3.8.0</version>
 		</dependency>
 
 	</dependencies>
 	<build>
-		
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
 				<configuration>
- 					<source>${java.version}</source>
+					<source>${java.version}</source>
 					<target>${java.version}</target>
-					 <fork>true</fork>
-                    <executable>C:\Program Files\Java\jdk1.8.0_202\bin\javac</executable>
+					<fork>true</fork>
+					<executable>C:\Program Files\Java\jdk1.8.0_202\bin\javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -128,8 +131,10 @@
 						</goals>
 						<configuration>
 							<projectName>PHP_Travels</projectName>
-							<outputDirectory>target/cucumber-reports/advance-reports</outputDirectory>
-							<cucumberOutput>target/cucumber-reports/cucumberTestReport.json</cucumberOutput>
+							<outputDirectory>
+								target/cucumber-reports/advance-reports</outputDirectory>
+							<cucumberOutput>
+								target/cucumber-reports/cucumberTestReport.json</cucumberOutput>
 							<buildNumber>1</buildNumber>
 							<parallelTesting>false</parallelTesting>
 						</configuration>
