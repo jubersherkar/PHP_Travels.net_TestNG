@@ -3,5 +3,5 @@ target/
 test-output/
 SparkReport/
 screenshots/
-ExtentReport/
+ExtentReports/
 testng.out.xml
