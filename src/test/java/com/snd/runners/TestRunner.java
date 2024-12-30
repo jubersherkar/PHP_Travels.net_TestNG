@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
 				"rerun:target/cucumber-reports/rerun.txt",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				},
-		tags = "@footers",
+		tags = "",
 		monochrome = true,
 		dryRun = false )
 

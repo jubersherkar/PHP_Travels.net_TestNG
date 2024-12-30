@@ -141,7 +141,7 @@ public class HomePageSteps {
 	}
 	@Then("Available flights should be displayed")
 	public void available_flights_should_be_displayed() {
-		Assert.assertEquals(homePage.getPageTitle(), "Flights Resultq");
+		Assert.assertEquals(homePage.getPageTitle(), "Flights Result");
 	    log.info("Verified Flight search");
 	}
 }
