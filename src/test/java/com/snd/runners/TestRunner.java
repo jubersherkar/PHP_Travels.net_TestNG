@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
 				"rerun:target/cucumber-reports/rerun.txt",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				},
-		tags = "@oneWaySearch",
+		tags = "@footers",
 		monochrome = true,
 		dryRun = false )
 
