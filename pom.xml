@@ -105,7 +105,7 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<fork>true</fork>
-					<executable>C:\Program Files\Java\jdk1.8.0_202\bin\javac</executable>
+					<executable>C:\Program Files\Java\jdk-17\bin\javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
