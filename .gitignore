@@ -1,7 +1,4 @@
 logs/
 target/
 test-output/
-SparkReport/
-screenshots/
-ExtentReports/
 testng.out.xml
