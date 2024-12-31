@@ -1,10 +1,13 @@
 package com.snd.managers;
 
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+
 import com.snd.enums.DriverType;
 import com.snd.enums.EnvironmentType;
 
@@ -47,6 +50,7 @@ public class DriverManager {
 		case CHROME : 
 			System.setProperty(CHROME_DRIVER_PROPERTY, System.getProperty("user.dir")+FileReaderManager.getInstance().getConfigReader().getChromeDriverPath()); 
 			ChromeOptions opt = new ChromeOptions();
+			opt.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 			opt.setHeadless(false);
 			driver = new ChromeDriver(opt);
 			break;

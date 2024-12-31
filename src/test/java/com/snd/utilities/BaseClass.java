@@ -8,7 +8,7 @@ import com.snd.pageObjects.HomePage;
 public class BaseClass {
 
 	private WebDriver driver;
-	private HomePage homePage;
+//	private HomePage homePage;
 	
 	public BaseClass(WebDriver driver)
 	{
@@ -19,7 +19,7 @@ public class BaseClass {
 		driver.get(FileReaderManager.getInstance().getConfigReader().getBaseUrl());
 
 //		code for selecting English language
-		homePage = new HomePage(driver);
-		homePage.transaleToEnglish();
+//		homePage = new HomePage(driver);
+//		homePage.transaleToEnglish();
 	}
 }

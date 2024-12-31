@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
 				"rerun:target/cucumber-reports/rerun.txt",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				},
-		tags = "@footers",
+//		tags = "not @login and @flightSearchResult",
 		monochrome = true,
 		dryRun = false )
 
@@ -24,7 +24,7 @@ public class TestRunner extends AbstractTestNGCucumberTests
 		public Object[][] scenarios() {
 			return super.scenarios();
 		}
-}	// mvn clean test -Dcucumber.filter.tags="@login"
+}	// mvn clean test -Dcucumber.filter.tags="@login" -Dbrowser="chrome"
 	// mvn clean test -Dcucumber.features="src/test/resources/features/HomePage.feature"
 	// mvn clean test -Dcucumber.plugin="html:target/cucumber-reports/cucumberReport.html"
 	// mvn clean test -Dcucumber.features="src/test/resources/features/LoginPage.feature" -Dcucumber.filter.tags="@ValidCredentials"	

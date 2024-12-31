@@ -63,10 +63,10 @@ public class HomePage
 	@FindBy(xpath = "//select[@id='flight_type']")
 	private WebElement cabinClass;
 
-	@FindBy(xpath = "//div[@class='input-items from_flights']")
+	@FindBy(xpath = "//input[@name='from']")
 	private WebElement originField;
 
-	@FindBy(xpath = "//div[@class='input-items flights_arrival to_flights']")
+	@FindBy(xpath = "//input[@name='to']")
 	private WebElement destinationField;
 
 	@FindBy(xpath = "//input[@id='departure']")
@@ -99,7 +99,7 @@ public class HomePage
 	@FindBy(xpath = "//a[@href='http://www.phptravels.com']")
 	private WebElement bottomLogo;
 
-	@FindBy(xpath = "//body[1]/section[1]/div[2]/div[1]/div[3]/div[4]/div[1]/ul[1]")
+	@FindBy(xpath = "//div[@class='footer-social-box float-center float-lg-end']")
 	private WebElement mediaIcons;
 
 	@FindBy(xpath = "//input[@id='fadults']")
@@ -197,7 +197,7 @@ public class HomePage
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,60000)");
 
-		if(disclaimer.getText().contains("All Rights Reserved by PHPTRAVELS")
+		if(disclaimer.getText().trim().equals("All Rights Reserved by PHPTARVELS")
 				&& bottomLogo.isDisplayed() && mediaIcons.isDisplayed())
 			return true;
 		else 
@@ -231,6 +231,7 @@ public class HomePage
 	{
 		wait = new WebDriverWait(driver, 5);
 		action.sendKeys(Keys.TAB,Keys.ENTER).perform();
+		originInputBox.click();
 		wait.until(ExpectedConditions.visibilityOf(originInputBox)).sendKeys(org);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='"+org.toUpperCase()+"']")));
 		action.sendKeys(Keys.ENTER).perform();
