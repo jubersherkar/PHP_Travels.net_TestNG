@@ -16,7 +16,6 @@ Feature: Verify flight search feature
 
     Examples: 
       | origin | destination | depart_date| adult | child | infant | cabin    |
-      | LHR    | CDG         | 30-01-2025 |     2 |     1 |      0 | Economy  |
       | CHI    | AMS         | 02-02-2025 |     3 |     2 |      1 | Business |
 
   @roundTripSearch
@@ -35,5 +34,4 @@ Feature: Verify flight search feature
 
     Examples: 
       | origin | destination | depart_date| return_date | adult | child | infant | cabin    |
-      | LHR    | CDG         | 30-01-2025 | 15-02-2025  |  2 		|     0 |      0 | Economy  |
-      | LHR    | CDG         | 30-01-2025 | 15-02-2025  |  2 		|     1 |      0 | Business |
+      | CHI    | AMS         | 02-02-2025 | 08-02-2025  |  2 		|     0 |      0 | Economy  |

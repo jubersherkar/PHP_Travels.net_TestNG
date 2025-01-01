@@ -111,11 +111,6 @@ public class HomePage
 	@FindBy(xpath = "//input[@id='finfant']")
 	private WebElement infant;
 
-	@FindBy(xpath = "/html[1]/body[1]/span[1]/span[1]/span[1]/input[1]")
-	private WebElement originInputBox;
-
-	@FindBy(xpath = "//input[@role='searchbox']")
-	private WebElement destinationInputBox;
 
 
 	public boolean verifyPresenceOfLogo()
@@ -231,8 +226,7 @@ public class HomePage
 	{
 		wait = new WebDriverWait(driver, 5);
 		action.sendKeys(Keys.TAB,Keys.ENTER).perform();
-		originInputBox.click();
-		wait.until(ExpectedConditions.visibilityOf(originInputBox)).sendKeys(org);
+		wait.until(ExpectedConditions.visibilityOf(originField)).sendKeys(org + " ");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='"+org.toUpperCase()+"']")));
 		action.sendKeys(Keys.ENTER).perform();
 	}
@@ -240,7 +234,7 @@ public class HomePage
 	{
 		wait = new WebDriverWait(driver, 5);
 		action.sendKeys(Keys.TAB,Keys.ENTER).perform();
-		wait.until(ExpectedConditions.visibilityOf(destinationInputBox)).sendKeys(dest);
+		wait.until(ExpectedConditions.visibilityOf(destinationField)).sendKeys(dest + " ");
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//button[normalize-space()='"+dest.toUpperCase()+"']")));
 		action.sendKeys(Keys.ENTER).perform();
 	}

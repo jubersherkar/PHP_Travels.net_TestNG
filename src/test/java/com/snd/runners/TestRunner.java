@@ -13,8 +13,8 @@ import io.cucumber.testng.CucumberOptions;
 				"rerun:target/cucumber-reports/rerun.txt",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 				},
-//		tags = "not @login and @flightSearchResult",
-		monochrome = true,
+//		tags = "@flightSearch",
+		monochrome = false,
 		dryRun = false )
 
 public class TestRunner extends AbstractTestNGCucumberTests
